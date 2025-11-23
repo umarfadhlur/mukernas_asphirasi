@@ -89,31 +89,27 @@ class AsphirasiMukernasScreen extends StatelessWidget {
           Positioned(
             right: 20.w,
             bottom: 700.h,
-            child: GestureDetector(
-                onTap: () {
-                  // TODO: tambahkan aksi navigasi
-                },
-                child: Column(
-                  children: [
-                    Text(
-                      "Pullman Central Park",
-                      style: GoogleFonts.kufam(
-                        fontSize: 44.sp,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                    SizedBox(height: 10.h),
-                    Text(
-                      "Jakarta, 24 - 25 November 2025",
-                      style: GoogleFonts.kufam(
-                        fontSize: 36.sp,
-                        color: Colors.white.withOpacity(0.92),
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                )),
+            child: Column(
+              children: [
+                Text(
+                  "Pullman Central Park",
+                  style: GoogleFonts.kufam(
+                    fontSize: 44.sp,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                SizedBox(height: 10.h),
+                Text(
+                  "Jakarta, 24 - 25 November 2025",
+                  style: GoogleFonts.kufam(
+                    fontSize: 36.sp,
+                    color: Colors.white.withOpacity(0.92),
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
+            ),
           ),
           // NEXT button as image (positioned bottom-right)
           Positioned(
