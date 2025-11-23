@@ -2,6 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mukernas_asphirasi/screens/asphirasi_home_screen.dart';
+import 'package:mukernas_asphirasi/screens/sponsor/alfiyah_menu.dart';
+import 'package:mukernas_asphirasi/screens/sponsor/bsi_menu.dart';
+import 'package:mukernas_asphirasi/screens/sponsor/dsl_menu.dart';
+import 'package:mukernas_asphirasi/screens/sponsor/greyfurt_menu.dart';
+import 'package:mukernas_asphirasi/screens/sponsor/koperindo_menu.dart';
+import 'package:mukernas_asphirasi/screens/sponsor/zurich_menu.dart';
 
 class MenuSponsor extends StatelessWidget {
   const MenuSponsor({super.key});
@@ -43,24 +49,207 @@ class MenuSponsor extends StatelessWidget {
                   ),
                 ),
 
-                SizedBox(height: 150.h),
+                SizedBox(height: 200.h),
 
-                // ====================================================
-                // CONTENT (placeholder dulu)
-                // ====================================================
-                // Expanded(
-                //   child: Center(
-                //     child: Text(
-                //       "SPONSOR PAGE",
-                //       style: GoogleFonts.kufam(
-                //         fontSize: 50.sp,
-                //         fontWeight: FontWeight.bold,
-                //         color: Colors.white,
-                //         letterSpacing: 1.2,
-                //       ),
-                //     ),
-                //   ),
-                // ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    SizedBox(
+                      height: 200.h,
+                      child: Image.asset(
+                        "assets/materi/sponsor1.png",
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 200.h,
+                      child: Image.asset(
+                        "assets/materi/sponsor2.png",
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  ],
+                ),
+
+                SizedBox(height: 40.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    SizedBox(
+                      height: 150.h,
+                      child: Image.asset(
+                        "assets/materi/sponsor3.png",
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: ((context) => const ZurichMenu()),
+                          ),
+                        );
+                      },
+                      child: SizedBox(
+                        height: 150.h,
+                        child: Image.asset(
+                          "assets/materi/sponsor4.png",
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: ((context) => const BsiMenu()),
+                          ),
+                        );
+                      },
+                      child: SizedBox(
+                        height: 150.h,
+                        child: Image.asset(
+                          "assets/materi/sponsor5.png",
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+
+                SizedBox(height: 40.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: ((context) => const GreyfurtMenu()),
+                          ),
+                        );
+                      },
+                      child: SizedBox(
+                        height: 150.h,
+                        child: Image.asset(
+                          "assets/materi/sponsor6.png",
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 150.h,
+                      child: Image.asset(
+                        "assets/materi/sponsor7.png",
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 150.h,
+                      child: Image.asset(
+                        "assets/materi/sponsor8.png",
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 150.h,
+                      child: Image.asset(
+                        "assets/materi/sponsor9.png",
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  ],
+                ),
+
+                SizedBox(height: 40.h),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    SizedBox(
+                      height: 150.h,
+                      child: Image.asset(
+                        "assets/materi/sponsor10.png",
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: ((context) => const AlfiyahMenu()),
+                          ),
+                        );
+                      },
+                      child: SizedBox(
+                        height: 150.h,
+                        child: Image.asset(
+                          "assets/materi/sponsor11.png",
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 150.h,
+                      child: Image.asset(
+                        "assets/materi/sponsor12.png",
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  ],
+                ),
+
+                SizedBox(height: 40.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: ((context) => const KoperindoMenu()),
+                          ),
+                        );
+                      },
+                      child: SizedBox(
+                        height: 150.h,
+                        child: Image.asset(
+                          "assets/materi/sponsor13.png",
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: ((context) => const DslMenu()),
+                          ),
+                        );
+                      },
+                      child: SizedBox(
+                        height: 150.h,
+                        child: Image.asset(
+                          "assets/materi/sponsor14.png",
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 150.h,
+                      child: Image.asset(
+                        "assets/materi/sponsor15.png",
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  ],
+                ),
 
                 SizedBox(height: 40.h),
               ],

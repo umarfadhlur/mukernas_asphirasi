@@ -43,24 +43,15 @@ class MenuRundown extends StatelessWidget {
                   ),
                 ),
 
-                SizedBox(height: 150.h),
+                SizedBox(height: 200.h),
 
-                // ====================================================
-                // CONTENT (placeholder dulu)
-                // ====================================================
-                // Expanded(
-                //   child: Center(
-                //     child: Text(
-                //       "RUNDOWN PAGE",
-                //       style: GoogleFonts.kufam(
-                //         fontSize: 50.sp,
-                //         fontWeight: FontWeight.bold,
-                //         color: Colors.white,
-                //         letterSpacing: 1.2,
-                //       ),
-                //     ),
-                //   ),
-                // ),
+                SizedBox(
+                      height: 950.h,
+                      child: Image.asset(
+                        "assets/materi/rundown1.png",
+                        fit: BoxFit.contain,
+                      ),
+                    ),
 
                 SizedBox(height: 40.h),
               ],

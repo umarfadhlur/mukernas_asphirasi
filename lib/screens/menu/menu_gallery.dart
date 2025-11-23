@@ -3,8 +3,57 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mukernas_asphirasi/screens/asphirasi_home_screen.dart';
 
-class MenuGallery extends StatelessWidget {
+class MenuGallery extends StatefulWidget {
   const MenuGallery({super.key});
+
+  @override
+  State<MenuGallery> createState() => _MenuGalleryState();
+}
+
+class _MenuGalleryState extends State<MenuGallery> {
+  int _currentPage = 0;
+
+  /// 2 gambar per halaman
+  final List<List<String>> _pages = [
+    [
+      "assets/materi/gallery1.png",
+      "assets/materi/gallery2.png",
+    ],
+    [
+      "assets/materi/gallery3.png",
+      "assets/materi/gallery4.png",
+    ],
+    [
+      "assets/materi/gallery5.png",
+      "assets/materi/gallery6.png",
+    ],
+  ];
+
+  void _nextPage() {
+    if (_currentPage < _pages.length - 1) {
+      setState(() {
+        _currentPage++;
+      });
+    }
+  }
+
+  void _prevPage() {
+    if (_currentPage > 0) {
+      setState(() {
+        _currentPage--;
+      });
+    }
+  }
+
+  Widget getImageBox(String assetPath) {
+    return SizedBox(
+      height: 500.h,
+      child: Image.asset(
+        assetPath,
+        fit: BoxFit.contain,
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,26 +92,48 @@ class MenuGallery extends StatelessWidget {
                   ),
                 ),
 
-                SizedBox(height: 150.h),
-
-                // ====================================================
-                // CONTENT (placeholder dulu)
-                // ====================================================
-                // Expanded(
-                //   child: Center(
-                //     child: Text(
-                //       "GALLERY PAGE",
-                //       style: GoogleFonts.kufam(
-                //         fontSize: 50.sp,
-                //         fontWeight: FontWeight.bold,
-                //         color: Colors.white,
-                //         letterSpacing: 1.2,
-                //       ),
-                //     ),
-                //   ),
-                // ),
+                SizedBox(height: 200.h),
+                // show two images from the current page
+                Builder(
+                  builder: (context) {
+                    final imgs = _pages[_currentPage];
+                    return Column(
+                      children: [
+                        getImageBox(imgs[0]),
+                        SizedBox(height: 40.h),
+                        getImageBox(imgs[1]),
+                      ],
+                    );
+                  },
+                ),
 
                 SizedBox(height: 40.h),
+              ],
+            ),
+          ),
+
+          Positioned(
+            right: 50.w,
+            top: 350.h,
+            child: Row(
+              children: [
+                // LEFT BUTTON
+                GestureDetector(
+                  onTap: _prevPage,
+                  child: Image.asset(
+                    "assets/images/left_btn.png",
+                    height: 90.h,
+                  ),
+                ),
+                SizedBox(width: 40.w),
+                // RIGHT BUTTON
+                GestureDetector(
+                  onTap: _nextPage,
+                  child: Image.asset(
+                    "assets/images/right_btn.png",
+                    height: 90.h,
+                  ),
+                ),
               ],
             ),
           ),
