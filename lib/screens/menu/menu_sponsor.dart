@@ -5,8 +5,11 @@ import 'package:mukernas_asphirasi/screens/asphirasi_home_screen.dart';
 import 'package:mukernas_asphirasi/screens/sponsor/alfiyah_menu.dart';
 import 'package:mukernas_asphirasi/screens/sponsor/bsi_menu.dart';
 import 'package:mukernas_asphirasi/screens/sponsor/dsl_menu.dart';
+import 'package:mukernas_asphirasi/screens/sponsor/ethiopian_menu.dart';
+import 'package:mukernas_asphirasi/screens/sponsor/flydba_menu.dart';
 import 'package:mukernas_asphirasi/screens/sponsor/greyfurt_menu.dart';
 import 'package:mukernas_asphirasi/screens/sponsor/koperindo_menu.dart';
+import 'package:mukernas_asphirasi/screens/sponsor/nqh_menu.dart';
 import 'package:mukernas_asphirasi/screens/sponsor/zurich_menu.dart';
 
 class MenuSponsor extends StatelessWidget {
@@ -49,7 +52,7 @@ class MenuSponsor extends StatelessWidget {
                   ),
                 ),
 
-                SizedBox(height: 200.h),
+                SizedBox(height: 175.h),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -154,11 +157,21 @@ class MenuSponsor extends StatelessWidget {
                         fit: BoxFit.contain,
                       ),
                     ),
-                    SizedBox(
-                      height: 150.h,
-                      child: Image.asset(
-                        "assets/materi/sponsor9.png",
-                        fit: BoxFit.contain,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: ((context) => const FlyDbaMenu()),
+                          ),
+                        );
+                      },
+                      child: SizedBox(
+                        height: 150.h,
+                        child: Image.asset(
+                          "assets/materi/sponsor9.png",
+                          fit: BoxFit.contain,
+                        ),
                       ),
                     ),
                   ],
@@ -169,11 +182,21 @@ class MenuSponsor extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    SizedBox(
-                      height: 150.h,
-                      child: Image.asset(
-                        "assets/materi/sponsor10.png",
-                        fit: BoxFit.contain,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: ((context) => const EthiopianMenu()),
+                          ),
+                        );
+                      },
+                      child: SizedBox(
+                        height: 150.h,
+                        child: Image.asset(
+                          "assets/materi/sponsor10.png",
+                          fit: BoxFit.contain,
+                        ),
                       ),
                     ),
                     GestureDetector(
@@ -241,11 +264,21 @@ class MenuSponsor extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      height: 150.h,
-                      child: Image.asset(
-                        "assets/materi/sponsor15.png",
-                        fit: BoxFit.contain,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: ((context) => const NqhMenu()),
+                          ),
+                        );
+                      },
+                      child: SizedBox(
+                        height: 150.h,
+                        child: Image.asset(
+                          "assets/materi/sponsor15.png",
+                          fit: BoxFit.contain,
+                        ),
                       ),
                     ),
                   ],
@@ -301,7 +334,7 @@ class MenuSponsor extends StatelessWidget {
             left: 75.w,
             bottom: 75.h,
             child: SizedBox(
-              height: 350.h,
+              height: 200.h,
               child: Image.asset(
                 "assets/images/asphirasi_logo.png",
                 fit: BoxFit.contain,

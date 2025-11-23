@@ -43,16 +43,27 @@ class BsiMenu extends StatelessWidget {
                   ),
                 ),
 
-                SizedBox(height: 200.h),
+                SizedBox(height: 175.h),
 
                 SizedBox(
-                  height: 950.h,
+                  height: 1150.h,
                   child: Image.asset(
                     "assets/materi/bsi_materi.png",
                     fit: BoxFit.contain,
                   ),
                 ),
               ],
+            ),
+          ),
+          Positioned(
+            left: 75.w,
+            bottom: 75.h,
+            child: SizedBox(
+              height: 200.h,
+              child: Image.asset(
+                "assets/images/asphirasi_logo.png",
+                fit: BoxFit.contain,
+              ),
             ),
           ),
 
@@ -96,18 +107,6 @@ class BsiMenu extends StatelessWidget {
 
           // ====================================================
           // LOGO SPONSOR (BOTTOM LEFT)
-          // ====================================================
-          Positioned(
-            left: 75.w,
-            bottom: 75.h,
-            child: SizedBox(
-              height: 350.h,
-              child: Image.asset(
-                "assets/images/asphirasi_logo.png",
-                fit: BoxFit.contain,
-              ),
-            ),
-          ),
 
           // ====================================================
           // BACK BUTTON & HOME BUTTON (BOTTOM RIGHT)

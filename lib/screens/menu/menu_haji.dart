@@ -67,55 +67,27 @@ class _MenuHajiState extends State<MenuHaji> {
                     ),
                   ),
                 ),
-                SizedBox(height: 200.h),
+                SizedBox(height: 175.h),
                 Center(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      // LEFT BUTTON
-                      GestureDetector(
-                        onTap: _prevImage,
-                        child: Image.asset(
-                          "assets/images/left_btn.png",
-                          height: 90.h,
-                        ),
+                  child: Container(
+                    height: 1150.h,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30.r),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.25),
+                          blurRadius: 12,
+                          offset: const Offset(0, 6),
+                        )
+                      ],
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(30.r),
+                      child: Image.asset(
+                        _images[_currentIndex],
+                        fit: BoxFit.cover,
                       ),
-
-                      SizedBox(width: 40.w),
-
-                      // MAIN IMAGE
-                      Container(
-                        height: 950.h,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30.r),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.25),
-                              blurRadius: 12,
-                              offset: const Offset(0, 6),
-                            )
-                          ],
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(30.r),
-                          child: Image.asset(
-                            _images[_currentIndex],
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-
-                      SizedBox(width: 40.w),
-
-                      // RIGHT BUTTON
-                      GestureDetector(
-                        onTap: _nextImage,
-                        child: Image.asset(
-                          "assets/images/right_btn.png",
-                          height: 90.h,
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
 
@@ -162,6 +134,32 @@ class _MenuHajiState extends State<MenuHaji> {
             ),
           ),
 
+          Positioned(
+            right: 50.w,
+            top: 350.h,
+            child: Row(
+              children: [
+                // LEFT BUTTON
+                GestureDetector(
+                  onTap: _prevImage,
+                  child: Image.asset(
+                    "assets/images/left_btn.png",
+                    height: 90.h,
+                  ),
+                ),
+                SizedBox(width: 40.w),
+                // RIGHT BUTTON
+                GestureDetector(
+                  onTap: _nextImage,
+                  child: Image.asset(
+                    "assets/images/right_btn.png",
+                    height: 90.h,
+                  ),
+                ),
+              ],
+            ),
+          ),
+
           // ====================================================
           // LOGO HAJI (BOTTOM LEFT)
           // ====================================================
@@ -169,7 +167,7 @@ class _MenuHajiState extends State<MenuHaji> {
             left: 75.w,
             bottom: 75.h,
             child: SizedBox(
-              height: 350.h,
+              height: 200.h,
               child: Image.asset(
                 "assets/images/asphirasi_logo.png",
                 fit: BoxFit.contain,

@@ -70,57 +70,55 @@ class _MenuDpdState extends State<MenuDpd> {
                 SizedBox(height: 500.h),
 
                 Center(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      // LEFT BUTTON
-                      GestureDetector(
-                        onTap: _prevImage,
-                        child: Image.asset(
-                          "assets/images/left_btn.png",
-                          height: 90.h,
-                        ),
+                  child: Container(
+                    width: 950.w,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30.r),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.25),
+                          blurRadius: 12,
+                          offset: const Offset(0, 6),
+                        )
+                      ],
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(30.r),
+                      child: Image.asset(
+                        _images[_currentIndex],
+                        fit: BoxFit.cover,
                       ),
-
-                      SizedBox(width: 40.w),
-
-                      // MAIN IMAGE
-                      Container(
-                        width: 800.w,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30.r),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.25),
-                              blurRadius: 12,
-                              offset: const Offset(0, 6),
-                            )
-                          ],
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(30.r),
-                          child: Image.asset(
-                            _images[_currentIndex],
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-
-                      SizedBox(width: 40.w),
-
-                      // RIGHT BUTTON
-                      GestureDetector(
-                        onTap: _nextImage,
-                        child: Image.asset(
-                          "assets/images/right_btn.png",
-                          height: 90.h,
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
 
                 SizedBox(height: 40.h),
+              ],
+            ),
+          ),
+
+          Positioned(
+            right: 50.w,
+            top: 350.h,
+            child: Row(
+              children: [
+                // LEFT BUTTON
+                GestureDetector(
+                  onTap: _prevImage,
+                  child: Image.asset(
+                    "assets/images/left_btn.png",
+                    height: 90.h,
+                  ),
+                ),
+                SizedBox(width: 40.w),
+                // RIGHT BUTTON
+                GestureDetector(
+                  onTap: _nextImage,
+                  child: Image.asset(
+                    "assets/images/right_btn.png",
+                    height: 90.h,
+                  ),
+                ),
               ],
             ),
           ),
@@ -196,7 +194,7 @@ class _MenuDpdState extends State<MenuDpd> {
             left: 75.w,
             bottom: 75.h,
             child: SizedBox(
-              height: 350.h,
+              height: 200.h,
               child: Image.asset(
                 "assets/images/asphirasi_logo.png",
                 fit: BoxFit.contain,

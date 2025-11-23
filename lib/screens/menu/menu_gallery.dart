@@ -16,6 +16,9 @@ class _MenuGalleryState extends State<MenuGallery> {
   /// 2 gambar per halaman
   final List<List<String>> _pages = [
     [
+      "assets/materi/gallery0.png",
+    ],
+    [
       "assets/materi/gallery1.png",
       "assets/materi/gallery2.png",
     ],
@@ -47,7 +50,7 @@ class _MenuGalleryState extends State<MenuGallery> {
 
   Widget getImageBox(String assetPath) {
     return SizedBox(
-      height: 500.h,
+      width: 975.w,
       child: Image.asset(
         assetPath,
         fit: BoxFit.contain,
@@ -92,18 +95,25 @@ class _MenuGalleryState extends State<MenuGallery> {
                   ),
                 ),
 
-                SizedBox(height: 200.h),
+                SizedBox(height: 175.h),
                 // show two images from the current page
                 Builder(
                   builder: (context) {
                     final imgs = _pages[_currentPage];
-                    return Column(
-                      children: [
-                        getImageBox(imgs[0]),
-                        SizedBox(height: 40.h),
-                        getImageBox(imgs[1]),
-                      ],
-                    );
+
+                    if (imgs.length == 1) {
+                      // PAGE DENGAN 1 GAMBAR (gallery0)
+                      return getImageBox(imgs[0]);
+                    } else {
+                      // PAGE DENGAN 2 GAMBAR
+                      return Column(
+                        children: [
+                          getImageBox(imgs[0]),
+                          SizedBox(height: 40.h),
+                          getImageBox(imgs[1]),
+                        ],
+                      );
+                    }
                   },
                 ),
 
@@ -183,7 +193,7 @@ class _MenuGalleryState extends State<MenuGallery> {
             left: 75.w,
             bottom: 75.h,
             child: SizedBox(
-              height: 350.h,
+              height: 200.h,
               child: Image.asset(
                 "assets/images/asphirasi_logo.png",
                 fit: BoxFit.contain,

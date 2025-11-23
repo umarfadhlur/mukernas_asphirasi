@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mukernas_asphirasi/screens/asphirasi_home_screen.dart';
 
-class MenuOrganisasi extends StatelessWidget {
-  const MenuOrganisasi({super.key});
+class FlyDbaMenu extends StatelessWidget {
+  const FlyDbaMenu({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -43,38 +43,21 @@ class MenuOrganisasi extends StatelessWidget {
                   ),
                 ),
 
-                SizedBox(height: 400.h),
+                SizedBox(height: 175.h),
 
-                Center(
-                  child: Container(
-                    width: 1080.w,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30.r),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.25),
-                          blurRadius: 12,
-                          offset: const Offset(0, 6),
-                        )
-                      ],
-                    ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(30.r),
-                      child: Image.asset(
-                        "assets/materi/organisasi.png",
-                        fit: BoxFit.cover,
-                      ),
-                    ),
+                SizedBox(
+                  height: 1000.h,
+                  child: Image.asset(
+                    "assets/materi/flydba_materi.png",
+                    fit: BoxFit.contain,
                   ),
                 ),
-
-                SizedBox(height: 40.h),
               ],
             ),
           ),
 
           // ====================================================
-          // LOGO ORGANISASI (BOTTOM LEFT)
+          // LOGO SPONSOR (BOTTOM LEFT)
           // ====================================================
           Positioned(
             left: -70.w,
@@ -99,7 +82,7 @@ class MenuOrganisasi extends StatelessWidget {
                   ],
                 ),
                 child: Text(
-                  "     ORGANISASI                 ",
+                  "     FLY DBA                 ",
                   style: GoogleFonts.kufam(
                     fontSize: 46.sp,
                     fontWeight: FontWeight.w700,
@@ -112,7 +95,7 @@ class MenuOrganisasi extends StatelessWidget {
           ),
 
           // ====================================================
-          // LOGO ORGANISASI (BOTTOM LEFT)
+          // LOGO SPONSOR (BOTTOM LEFT)
           // ====================================================
           Positioned(
             left: 75.w,
@@ -125,7 +108,6 @@ class MenuOrganisasi extends StatelessWidget {
               ),
             ),
           ),
-
           // ====================================================
           // BACK BUTTON & HOME BUTTON (BOTTOM RIGHT)
           // ====================================================

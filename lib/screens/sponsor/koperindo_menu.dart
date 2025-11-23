@@ -3,8 +3,34 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mukernas_asphirasi/screens/asphirasi_home_screen.dart';
 
-class KoperindoMenu extends StatelessWidget {
+class KoperindoMenu extends StatefulWidget {
   const KoperindoMenu({super.key});
+
+  @override
+  State<KoperindoMenu> createState() => _KoperindoMenuState();
+}
+
+class _KoperindoMenuState extends State<KoperindoMenu> {
+  int _currentIndex = 0;
+
+  final List<String> _images = [
+    "assets/materi/koperindo_materi1.png",
+    "assets/materi/koperindo_materi2.png",
+    "assets/materi/koperindo_materi3.png",
+    "assets/materi/koperindo_materi4.png",
+  ];
+
+  void _nextImage() {
+    setState(() {
+      _currentIndex = (_currentIndex + 1) % _images.length;
+    });
+  }
+
+  void _prevImage() {
+    setState(() {
+      _currentIndex = (_currentIndex - 1 + _images.length) % _images.length;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,22 +68,37 @@ class KoperindoMenu extends StatelessWidget {
                     ),
                   ),
                 ),
-
-                SizedBox(height: 200.h),
-
-                SizedBox(
-                  height: 950.h,
-                  child: Image.asset(
-                    "assets/materi/koperindo_materi.png",
-                    fit: BoxFit.contain,
+                SizedBox(height: 175.h),
+                Center(
+                  child: Container(
+                    height: 1150.h,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30.r),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.25),
+                          blurRadius: 12,
+                          offset: const Offset(0, 6),
+                        )
+                      ],
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(30.r),
+                      child: Image.asset(
+                        _images[_currentIndex],
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   ),
                 ),
+
+                SizedBox(height: 40.h),
               ],
             ),
           ),
 
           // ====================================================
-          // LOGO SPONSOR (BOTTOM LEFT)
+          // LOGO HAJI (BOTTOM LEFT)
           // ====================================================
           Positioned(
             left: -70.w,
@@ -95,13 +136,38 @@ class KoperindoMenu extends StatelessWidget {
           ),
 
           // ====================================================
-          // LOGO SPONSOR (BOTTOM LEFT)
+          // LOGO HAJI (BOTTOM LEFT)
           // ====================================================
+          Positioned(
+            right: 50.w,
+            top: 350.h,
+            child: Row(
+              children: [
+                // LEFT BUTTON
+                GestureDetector(
+                  onTap: _prevImage,
+                  child: Image.asset(
+                    "assets/images/left_btn.png",
+                    height: 90.h,
+                  ),
+                ),
+                SizedBox(width: 40.w),
+                // RIGHT BUTTON
+                GestureDetector(
+                  onTap: _nextImage,
+                  child: Image.asset(
+                    "assets/images/right_btn.png",
+                    height: 90.h,
+                  ),
+                ),
+              ],
+            ),
+          ),
           Positioned(
             left: 75.w,
             bottom: 75.h,
             child: SizedBox(
-              height: 350.h,
+              height: 200.h,
               child: Image.asset(
                 "assets/images/asphirasi_logo.png",
                 fit: BoxFit.contain,

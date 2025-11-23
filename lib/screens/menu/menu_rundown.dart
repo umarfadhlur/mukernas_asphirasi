@@ -43,15 +43,15 @@ class MenuRundown extends StatelessWidget {
                   ),
                 ),
 
-                SizedBox(height: 200.h),
+                SizedBox(height: 175.h),
 
                 SizedBox(
-                      height: 950.h,
-                      child: Image.asset(
-                        "assets/materi/rundown1.png",
-                        fit: BoxFit.contain,
-                      ),
-                    ),
+                  height: 1000.h,
+                  child: Image.asset(
+                    "assets/materi/rundown1.png",
+                    fit: BoxFit.contain,
+                  ),
+                ),
 
                 SizedBox(height: 40.h),
               ],
@@ -103,7 +103,7 @@ class MenuRundown extends StatelessWidget {
             left: 75.w,
             bottom: 75.h,
             child: SizedBox(
-              height: 350.h,
+              height: 200.h,
               child: Image.asset(
                 "assets/images/asphirasi_logo.png",
                 fit: BoxFit.contain,

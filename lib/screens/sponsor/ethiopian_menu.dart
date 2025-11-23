@@ -3,8 +3,32 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mukernas_asphirasi/screens/asphirasi_home_screen.dart';
 
-class MenuOrganisasi extends StatelessWidget {
-  const MenuOrganisasi({super.key});
+class EthiopianMenu extends StatefulWidget {
+  const EthiopianMenu({super.key});
+
+  @override
+  State<EthiopianMenu> createState() => _EthiopianMenuState();
+}
+
+class _EthiopianMenuState extends State<EthiopianMenu> {
+  int _currentIndex = 0;
+
+  final List<String> _images = [
+    "assets/materi/ethiopian_materi1.png",
+    "assets/materi/ethiopian_materi2.png",
+  ];
+
+  void _nextImage() {
+    setState(() {
+      _currentIndex = (_currentIndex + 1) % _images.length;
+    });
+  }
+
+  void _prevImage() {
+    setState(() {
+      _currentIndex = (_currentIndex - 1 + _images.length) % _images.length;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,12 +66,11 @@ class MenuOrganisasi extends StatelessWidget {
                     ),
                   ),
                 ),
-
-                SizedBox(height: 400.h),
-
+                SizedBox(height: 175.h),
                 Center(
                   child: Container(
-                    width: 1080.w,
+                    // height: 1000.h,
+                    width: 800.w,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30.r),
                       boxShadow: [
@@ -61,7 +84,7 @@ class MenuOrganisasi extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(30.r),
                       child: Image.asset(
-                        "assets/materi/organisasi.png",
+                        _images[_currentIndex],
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -73,8 +96,45 @@ class MenuOrganisasi extends StatelessWidget {
             ),
           ),
 
+          Positioned(
+            right: 50.w,
+            top: 350.h,
+            child: Row(
+              children: [
+                // LEFT BUTTON
+                GestureDetector(
+                  onTap: _prevImage,
+                  child: Image.asset(
+                    "assets/images/left_btn.png",
+                    height: 90.h,
+                  ),
+                ),
+                SizedBox(width: 40.w),
+                // RIGHT BUTTON
+                GestureDetector(
+                  onTap: _nextImage,
+                  child: Image.asset(
+                    "assets/images/right_btn.png",
+                    height: 90.h,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Positioned(
+            left: 75.w,
+            bottom: 75.h,
+            child: SizedBox(
+              height: 200.h,
+              child: Image.asset(
+                "assets/images/asphirasi_logo.png",
+                fit: BoxFit.contain,
+              ),
+            ),
+          ),
+
           // ====================================================
-          // LOGO ORGANISASI (BOTTOM LEFT)
+          // LOGO HAJI (BOTTOM LEFT)
           // ====================================================
           Positioned(
             left: -70.w,
@@ -99,7 +159,7 @@ class MenuOrganisasi extends StatelessWidget {
                   ],
                 ),
                 child: Text(
-                  "     ORGANISASI                 ",
+                  "     ETHIOPIAN                 ",
                   style: GoogleFonts.kufam(
                     fontSize: 46.sp,
                     fontWeight: FontWeight.w700,
@@ -112,19 +172,8 @@ class MenuOrganisasi extends StatelessWidget {
           ),
 
           // ====================================================
-          // LOGO ORGANISASI (BOTTOM LEFT)
+          // LOGO HAJI (BOTTOM LEFT)
           // ====================================================
-          Positioned(
-            left: 75.w,
-            bottom: 75.h,
-            child: SizedBox(
-              height: 200.h,
-              child: Image.asset(
-                "assets/images/asphirasi_logo.png",
-                fit: BoxFit.contain,
-              ),
-            ),
-          ),
 
           // ====================================================
           // BACK BUTTON & HOME BUTTON (BOTTOM RIGHT)

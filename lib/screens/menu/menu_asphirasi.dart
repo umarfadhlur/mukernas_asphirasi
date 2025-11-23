@@ -160,7 +160,7 @@ class _MenuAsphirasiState extends State<MenuAsphirasi> {
             left: 75.w,
             bottom: 75.h,
             child: SizedBox(
-              height: 350.h,
+              height: 200.h,
               child: Image.asset("assets/images/asphirasi_logo.png"),
             ),
           ),
