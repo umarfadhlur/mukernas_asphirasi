@@ -125,7 +125,7 @@ class AsphirasiMainMenu extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           // Row 1 — RUNDOWN & ASPHIRASI
-          _menuRow(context, "RUNDOWN", "ASPHIRASI"),
+          _menuRowk(context, "RUNDOWN", "ASPHIRASI"),
 
           SizedBox(height: 100.h),
 
@@ -156,6 +156,23 @@ class AsphirasiMainMenu extends StatelessWidget {
             child: _menuButton(left,
                 isLeft: true, onTap: () => _navigateTo(context, left))),
         SizedBox(width: 40.w),
+        Expanded(
+            child: _menuButton(right,
+                isLeft: false, onTap: () => _navigateTo(context, right))),
+      ],
+    );
+  }
+
+  Widget _menuRowk(BuildContext context, String left, String right) {
+    return Row(
+      children: [
+        Visibility(
+          visible: false,
+          child: Expanded(
+              child: _menuButton(left,
+                  isLeft: true, onTap: () => _navigateTo(context, left))),
+        ),
+        // SizedBox(width: 40.w),
         Expanded(
             child: _menuButton(right,
                 isLeft: false, onTap: () => _navigateTo(context, right))),

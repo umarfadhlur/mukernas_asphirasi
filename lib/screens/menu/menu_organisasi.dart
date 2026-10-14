@@ -3,8 +3,33 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mukernas_asphirasi/screens/asphirasi_home_screen.dart';
 
-class MenuOrganisasi extends StatelessWidget {
+class MenuOrganisasi extends StatefulWidget {
   const MenuOrganisasi({super.key});
+
+  @override
+  State<MenuOrganisasi> createState() => _MenuOrganisasiState();
+}
+
+class _MenuOrganisasiState extends State<MenuOrganisasi> {
+  int _currentIndex = 0;
+
+  final List<String> _images = [
+    "assets/materi/organisasi.png",
+    "assets/materi/organisasi3.jpg",
+    "assets/materi/organisasi4.jpg",
+  ];
+
+  void _nextImage() {
+    setState(() {
+      _currentIndex = (_currentIndex + 1) % _images.length;
+    });
+  }
+
+  void _prevImage() {
+    setState(() {
+      _currentIndex = (_currentIndex - 1 + _images.length) % _images.length;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,12 +67,10 @@ class MenuOrganisasi extends StatelessWidget {
                     ),
                   ),
                 ),
-
-                SizedBox(height: 400.h),
-
+                SizedBox(height: 175.h),
                 Center(
                   child: Container(
-                    width: 1080.w,
+                    width: 1000.w,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30.r),
                       boxShadow: [
@@ -61,7 +84,7 @@ class MenuOrganisasi extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(30.r),
                       child: Image.asset(
-                        "assets/materi/organisasi.png",
+                        _images[_currentIndex],
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -74,7 +97,7 @@ class MenuOrganisasi extends StatelessWidget {
           ),
 
           // ====================================================
-          // LOGO ORGANISASI (BOTTOM LEFT)
+          // LOGO HAJI (BOTTOM LEFT)
           // ====================================================
           Positioned(
             left: -70.w,
@@ -111,8 +134,34 @@ class MenuOrganisasi extends StatelessWidget {
             ),
           ),
 
+          Positioned(
+            right: 50.w,
+            top: 350.h,
+            child: Row(
+              children: [
+                // LEFT BUTTON
+                GestureDetector(
+                  onTap: _prevImage,
+                  child: Image.asset(
+                    "assets/images/left_btn.png",
+                    height: 90.h,
+                  ),
+                ),
+                SizedBox(width: 40.w),
+                // RIGHT BUTTON
+                GestureDetector(
+                  onTap: _nextImage,
+                  child: Image.asset(
+                    "assets/images/right_btn.png",
+                    height: 90.h,
+                  ),
+                ),
+              ],
+            ),
+          ),
+
           // ====================================================
-          // LOGO ORGANISASI (BOTTOM LEFT)
+          // LOGO HAJI (BOTTOM LEFT)
           // ====================================================
           Positioned(
             left: 75.w,
